@@ -7,7 +7,7 @@ body {
 body {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 html {
   box-sizing: border-box; }
@@ -156,26 +156,22 @@ nav.row {
   margin: 0 auto;
   width: 150px; }
 
-.bg-bubbles-wrapper {
-  overflow: hidden; }
-
 .bg-bubbles {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 0px;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   z-index: 1; }
   .bg-bubbles li {
     position: absolute;
     list-style: none;
-    display: block;
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.15);
-    bottom: -160px;
-    -webkit-animation: square 25s infinite;
-    animation: square 25s infinite;
+    bottom: -200vh;
+    -webkit-animation: square2 25s infinite;
+    animation: square2 25s infinite;
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear; }
     .bg-bubbles li:nth-child(1) {
@@ -193,16 +189,14 @@ nav.row {
       left: 40%;
       width: 60px;
       height: 60px;
-      animation-duration: 22s;
-      background-color: fade(white, 25%); }
+      animation-duration: 22s; }
     .bg-bubbles li:nth-child(5) {
       left: 70%; }
     .bg-bubbles li:nth-child(6) {
       left: 80%;
       width: 120px;
       height: 120px;
-      animation-delay: 3s;
-      background-color: fade(white, 20%); }
+      animation-delay: 3s; }
     .bg-bubbles li:nth-child(7) {
       left: 32%;
       width: 160px;
@@ -219,8 +213,7 @@ nav.row {
       width: 10px;
       height: 10px;
       animation-delay: 2s;
-      animation-duration: 40s;
-      background-color: fade(white, 30%); }
+      animation-duration: 40s; }
     .bg-bubbles li:nth-child(10) {
       left: 90%;
       width: 160px;
@@ -231,12 +224,28 @@ nav.row {
   0% {
     transform: translateY(0); }
   100% {
-    transform: translateY(-900px) rotate(600deg); } }
+    transform: translateY(-2000px) rotate(600deg); } }
 @keyframes square {
   0% {
     transform: translateY(0); }
   100% {
-    transform: translateY(-900px) rotate(600deg); } }
+    transform: translateY(-2000px) rotate(600deg); } }
+@-webkit-keyframes square2 {
+  0% {
+    bottom: -200vh;
+    display: block; }
+  100% {
+    bottom: 100%;
+    transform: rotate(600deg);
+    display: block; } }
+@keyframes square2 {
+  0% {
+    bottom: -200vh;
+    display: block; }
+  100% {
+    bottom: 100%;
+    transform: rotate(600deg);
+    display: block; } }
 @media screen and (min-width: 375px) {
   p {
     font-size: 16px;

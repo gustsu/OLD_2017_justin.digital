@@ -11,7 +11,7 @@ body {
 body {
   font-family: 'Open Sans', sans-serif;
   color:#fff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 
@@ -231,30 +231,27 @@ nav.row {
   width: 150px;
 }
 
-.bg-bubbles-wrapper {
-  overflow: hidden;
-}
+
 
 .bg-bubbles{
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: 0px;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   
   z-index: 1;
   
   li{
     position: absolute;
     list-style: none;
-    display: block;
     width: 40px;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.15);
-    bottom: -160px;
+    bottom: -200vh;
     
-    -webkit-animation: square 25s infinite;
-    animation:         square 25s infinite;
+    -webkit-animation: square2 25s infinite;
+    animation:         square2 25s infinite;
     
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
@@ -285,7 +282,6 @@ nav.row {
       
       animation-duration: 22s;
       
-      background-color: fade(white, 25%);
     }
     
     &:nth-child(5){
@@ -298,7 +294,6 @@ nav.row {
       height: 120px;
       
       animation-delay: 3s;
-      background-color: fade(white, 20%);
     }
     
     &:nth-child(7){
@@ -325,7 +320,6 @@ nav.row {
       
       animation-delay: 2s;
       animation-duration: 40s;
-      background-color: fade(white, 30%);
     }
     
     &:nth-child(10){
@@ -340,11 +334,20 @@ nav.row {
 
 @-webkit-keyframes square {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-900px) rotate(600deg); }
+  100% { transform: translateY(-2000px) rotate(600deg); }
 }
 @keyframes square {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-900px) rotate(600deg); }
+  100% { transform: translateY(-2000px) rotate(600deg); }
+}
+
+@-webkit-keyframes square2 {
+  0%   { bottom: -200vh;  display: block;}
+  100% { bottom: 100%; transform: rotate(600deg); display: block;}
+}
+@keyframes square2 {
+  0%   { bottom: -200vh; display: block;}
+  100% { bottom: 100%; transform: rotate(600deg); display: block;}
 }
 
 @media screen and (min-width: 375px) {
