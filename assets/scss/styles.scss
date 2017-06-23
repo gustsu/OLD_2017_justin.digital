@@ -11,9 +11,11 @@ body {
 body {
   font-family: 'Open Sans', sans-serif;
   color:#fff;
-  overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
 
 
 html {
@@ -57,8 +59,17 @@ p {
     line-height: 25px;
 }
 
-p:first-of-type {
-  margin-top: 2em;
+.me {
+    text-align: center;
+    display: block;
+    border-radius: 100%;
+    margin: 2em auto 0em;
+    width: 100px;
+    height: 100px;
+    transition: all .25s;
+    &:hover {
+      transform:scale(1.1);
+    };
 }
 
 
@@ -135,7 +146,7 @@ nav.row {
 }
 
 .content-container{
-    max-width: 760px;
+    max-width: 620px;
     width: 85%;
     margin: 0 auto;
     display: block;
@@ -232,26 +243,71 @@ nav.row {
 }
 
 
+.bg-bubbles {
+  display: none;
+}
 
-.bg-bubbles{
-  position: relative;
-  top: 0px;
+@-webkit-keyframes square {
+  0%   { bottom:-25%; }
+  100% { bottom: 120%; transform: rotate(600deg);  }
+}
+@keyframes square {
+  0%   { bottom:-25%; }
+  100% { bottom: 120%; transform: rotate(600deg);}
+}
+
+@media screen and (min-width: 375px) {
+  p {
+      font-size: 16px;
+      line-height: 34px;
+  }
+  .social-container {
+    a { 
+      margin-right: .75em;
+    }
+  }
+
+}
+
+@media screen and (min-width: 520px) {
+  h1 {
+    font-size:4.25em;
+  }
+
+  .social-container {
+    a {
+      width: 80px;
+      height: 80px;
+      padding-top: 20px;
+      font-size: 2em; 
+    }
+  }
+
+}
+
+
+@media screen and (min-width: 760px) {
+
+  .bg-bubbles{
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
-  
+  height: 100%;
   z-index: 1;
-  
+  display: block;
   li{
     position: absolute;
     list-style: none;
+    display: block;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.15);
-    bottom: -200vh;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,.15);
+    bottom: -25%;
     
-    -webkit-animation: square2 25s infinite;
-    animation:         square2 25s infinite;
+    -webkit-animation: square 25s infinite;
+    animation:         square 25s infinite;
     
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
@@ -282,6 +338,7 @@ nav.row {
       
       animation-duration: 22s;
       
+      background-color: rgba(255,255,255,.25);
     }
     
     &:nth-child(5){
@@ -294,6 +351,7 @@ nav.row {
       height: 120px;
       
       animation-delay: 3s;
+      background-color: rgba(255,255,255,.2);
     }
     
     &:nth-child(7){
@@ -320,6 +378,7 @@ nav.row {
       
       animation-delay: 2s;
       animation-duration: 40s;
+      background-color: rgba(255,255,255,.3);
     }
     
     &:nth-child(10){
@@ -332,63 +391,16 @@ nav.row {
   }
 }
 
-@-webkit-keyframes square {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-2000px) rotate(600deg); }
-}
-@keyframes square {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-2000px) rotate(600deg); }
-}
-
-@-webkit-keyframes square2 {
-  0%   { bottom: -200vh;  display: block;}
-  100% { bottom: 100%; transform: rotate(600deg); display: block;}
-}
-@keyframes square2 {
-  0%   { bottom: -200vh; display: block;}
-  100% { bottom: 100%; transform: rotate(600deg); display: block;}
-}
-
-@media screen and (min-width: 375px) {
-  p {
-      font-size: 16px;
-      line-height: 34px;
+  .home-body {
+      overflow: hidden;
   }
-  .social-container {
-    a { 
-      margin-right: .75em;
-    }
-  }
-
-}
-
-@media screen and (min-width: 520px) {
-  h1 {
-    font-size:5em;
-  }
-
-  .social-container {
-    a {
-      width: 80px;
-      height: 80px;
-      padding-top: 20px;
-      font-size: 2em; 
-    }
-  }
-
-
-}
-
-
-@media screen and (min-width: 760px) {
 
   p:first-of-type {
-    margin-top: 4em;
+    margin-top: 1.5em;
   }
 
   h1 {
-    font-size:7.5em;
+    font-size:4.5em;
   }
 }
 
